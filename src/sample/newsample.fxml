@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="632.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Controller">
+   <children>
+      <Button fx:id="button_q" mnemonicParsing="false" prefHeight="300.0" prefWidth="72.0" style="-fx-background-color: white;" text="Q" />
+      <Button fx:id="button_w" layoutX="80.0" mnemonicParsing="false" prefHeight="300.0" prefWidth="72.0" style="-fx-background-color: white;" text="W" />
+      <Button fx:id="button_e" layoutX="160.0" mnemonicParsing="false" prefHeight="300.0" prefWidth="72.0" style="-fx-background-color: white;" text="E" />
+      <Button fx:id="button_r" layoutX="240.0" mnemonicParsing="false" prefHeight="300.0" prefWidth="72.0" style="-fx-background-color: white;" text="R" />
+      <Button fx:id="button_t" layoutX="320.0" mnemonicParsing="false" prefHeight="300.0" prefWidth="72.0" style="-fx-background-color: white;" text="T" />
+      <Button fx:id="button_y" layoutX="400.0" mnemonicParsing="false" prefHeight="300.0" prefWidth="72.0" style="-fx-background-color: white;" text="Y" />
+      <Button fx:id="button_u" layoutX="480.0" mnemonicParsing="false" prefHeight="300.0" prefWidth="72.0" style="-fx-background-color: white;" text="U" />
+      <Button fx:id="button_i" layoutX="560.0" mnemonicParsing="false" prefHeight="300.0" prefWidth="72.0" style="-fx-background-color: white;" text="I" />
+      <Button fx:id="button_1" layoutX="47.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="56.0" style="-fx-background-color: Black;" text="1" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button fx:id="button_2" layoutX="127.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="56.0" style="-fx-background-color: black;" text="2" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_3" layoutX="288.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="56.0" style="-fx-background-color: black;" text="3" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_4" layoutX="368.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="56.0" style="-fx-background-color: black;" text="4" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_5" layoutX="448.0" mnemonicParsing="false" prefHeight="134.0" prefWidth="56.0" style="-fx-background-color: black;" text="5" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" layoutX="65.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="c#">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="143.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d#">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="306.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="f#">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="384.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="g#">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="464.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a#">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="24.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="do" wrappingWidth="24.228515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="104.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="re" wrappingWidth="24.228515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="184.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="mi" wrappingWidth="24.228515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="264.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fa" wrappingWidth="24.228515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="344.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="sol" wrappingWidth="24.228515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="424.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="la" wrappingWidth="24.228515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="504.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="si" wrappingWidth="24.228515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="585.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="do" wrappingWidth="24.228515625">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="33.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="c">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="113.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="193.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="e">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="273.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="f">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="353.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="g">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="433.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="a">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="513.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="b">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="593.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="c">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
