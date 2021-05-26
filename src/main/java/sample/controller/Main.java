@@ -1,9 +1,7 @@
 package sample.controller;
 
-import javafx.animation.FillTransition;
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
@@ -11,46 +9,38 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-import sample.model.PianoKeys;
+import sample.model.PianoKey;
 import sample.view.KeyView;
 
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.io.IOException;
+import java.util.*;
 
 public class Main extends Application {
 
     private MidiChannel channel;
     private FlowPane root = new FlowPane(10, 10);
-    private List<PianoKeys> pianoKeys = Arrays.asList(
-            new PianoKeys("C", KeyCode.D, 48, Color.WHITE),
-            new PianoKeys("C#", KeyCode.R, 49, Color.BLACK),
-            new PianoKeys("D", KeyCode.F, 50, Color.WHITE),
-            new PianoKeys("D#", KeyCode.T, 51, Color.BLACK),
-            new PianoKeys("E", KeyCode.G, 52, Color.WHITE),
-            new PianoKeys("F", KeyCode.H, 53, Color.WHITE),
-            new PianoKeys("F#", KeyCode.U, 54, Color.BLACK),
-            new PianoKeys("G", KeyCode.J, 55, Color.WHITE),
-            new PianoKeys("G#", KeyCode.I, 56, Color.BLACK),
-            new PianoKeys("A", KeyCode.K, 57, Color.WHITE),
-            new PianoKeys("A#", KeyCode.O, 58, Color.BLACK),
-            new PianoKeys("B", KeyCode.L, 59, Color.WHITE)
-    );
+    private final Map<KeyCode, KeyView> pianoKeysView = new LinkedHashMap<>();
+     {
+        pianoKeysView.put(KeyCode.D, new KeyView(new PianoKey("C", KeyCode.D, 48, Color.WHITE)));
+        pianoKeysView.put(KeyCode.R, new KeyView(new PianoKey("C#", KeyCode.R, 49, Color.BLACK)));
+        pianoKeysView.put(KeyCode.F, new KeyView(new PianoKey("D", KeyCode.F, 50, Color.WHITE)));
+        pianoKeysView.put(KeyCode.T, new KeyView(new PianoKey("D#", KeyCode.T, 51, Color.BLACK)));
+        pianoKeysView.put(KeyCode.G, new KeyView(new PianoKey("E", KeyCode.G, 52, Color.WHITE)));
+        pianoKeysView.put(KeyCode.H, new KeyView(new PianoKey("F", KeyCode.H, 53, Color.WHITE)));
+        pianoKeysView.put(KeyCode.U, new KeyView(new PianoKey("F#", KeyCode.U, 54, Color.BLACK)));
+        pianoKeysView.put(KeyCode.J, new KeyView(new PianoKey("G", KeyCode.J, 55, Color.WHITE)));
+        pianoKeysView.put(KeyCode.I, new KeyView(new PianoKey("G#", KeyCode.I, 56, Color.BLACK)));
+        pianoKeysView.put(KeyCode.K, new KeyView(new PianoKey("A", KeyCode.K, 57, Color.WHITE)));
+        pianoKeysView.put(KeyCode.O, new KeyView(new PianoKey("A#", KeyCode.O, 58, Color.BLACK)));
+        pianoKeysView.put(KeyCode.L, new KeyView(new PianoKey("B", KeyCode.L, 59, Color.WHITE)));
+    }
 
     @Override
-    public void start(Stage primaryStage) {
-        //Parent root = FXMLLoader.load(getClass().getResource("../newsample.fxml"));
-        //primaryStage.setTitle("Piano");
-        //primaryStage.setScene(new Scene(root, 632, 300));
-        //primaryStage.setResizable(false);
-        //primaryStage.show();
-        //loadChannel();
+    public void start(Stage primaryStage) throws IOException {
         Scene scene = new Scene(createScreen());
         final Set<String> pressedKeys = new HashSet<String>();
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -59,33 +49,26 @@ public class Main extends Application {
                 String note = t.getText();
                 if (!pressedKeys.contains(note)) {
                     pressedKeys.add(note);
-
-                    keyUsage(t.getCode());
+                    PianoKey k = pianoKeysView.get(t.getCode()).getKeys();
+                    k.keyUsage(pianoKeysView.get(t.getCode()));
+                    channel.noteOn(k.getNumber(), 60);
                 }
             }
         });
+
         scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent t) {
                 pressedKeys.remove(t.getText());
             }
         });
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
-
     public static void main(String[] args) {
         launch(args);
-    }
-
-    private void keyUsage(KeyCode key) {
-        root.getChildren().stream().map(k -> (KeyView) k).filter(k -> k.keys.key.equals(key))
-                .forEach(k -> {
-                    FillTransition ft = new FillTransition(Duration.seconds(0.1), k.r, Color.WHITE, Color.BLACK);
-                    ft.play();
-                    channel.noteOn(k.keys.number, 60);
-                });
     }
 
     private void loadChannel() {
@@ -103,10 +86,10 @@ public class Main extends Application {
     private Parent createScreen() {
         loadChannel();
         root.setPrefSize(730, 140);
-        pianoKeys.forEach(k -> {
-            KeyView view = new KeyView(k);
-            root.getChildren().addAll(view);
+        pianoKeysView.values().forEach(k -> {
+            root.getChildren().add(k);
         });
         return root;
     }
+
 }
