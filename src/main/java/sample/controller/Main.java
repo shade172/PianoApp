@@ -25,18 +25,18 @@ public class Main extends Application {
     private FlowPane root = new FlowPane(10, 10);
     private final Map<KeyCode, KeyView> pianoKeysView = new LinkedHashMap<>();
      {
-        pianoKeysView.put(KeyCode.D, new KeyView(new PianoKey("C", KeyCode.D, 48, Color.WHITE)));
-        pianoKeysView.put(KeyCode.R, new KeyView(new PianoKey("C#", KeyCode.R, 49, Color.BLACK)));
-        pianoKeysView.put(KeyCode.F, new KeyView(new PianoKey("D", KeyCode.F, 50, Color.WHITE)));
-        pianoKeysView.put(KeyCode.T, new KeyView(new PianoKey("D#", KeyCode.T, 51, Color.BLACK)));
-        pianoKeysView.put(KeyCode.G, new KeyView(new PianoKey("E", KeyCode.G, 52, Color.WHITE)));
-        pianoKeysView.put(KeyCode.H, new KeyView(new PianoKey("F", KeyCode.H, 53, Color.WHITE)));
-        pianoKeysView.put(KeyCode.U, new KeyView(new PianoKey("F#", KeyCode.U, 54, Color.BLACK)));
-        pianoKeysView.put(KeyCode.J, new KeyView(new PianoKey("G", KeyCode.J, 55, Color.WHITE)));
-        pianoKeysView.put(KeyCode.I, new KeyView(new PianoKey("G#", KeyCode.I, 56, Color.BLACK)));
-        pianoKeysView.put(KeyCode.K, new KeyView(new PianoKey("A", KeyCode.K, 57, Color.WHITE)));
-        pianoKeysView.put(KeyCode.O, new KeyView(new PianoKey("A#", KeyCode.O, 58, Color.BLACK)));
-        pianoKeysView.put(KeyCode.L, new KeyView(new PianoKey("B", KeyCode.L, 59, Color.WHITE)));
+        pianoKeysView.put(KeyCode.D, new KeyView(new PianoKey("C", KeyCode.D, 48)));
+        pianoKeysView.put(KeyCode.R, new KeyView(new PianoKey("C#", KeyCode.R, 49)));
+        pianoKeysView.put(KeyCode.F, new KeyView(new PianoKey("D", KeyCode.F, 50)));
+        pianoKeysView.put(KeyCode.T, new KeyView(new PianoKey("D#", KeyCode.T, 51)));
+        pianoKeysView.put(KeyCode.G, new KeyView(new PianoKey("E", KeyCode.G, 52)));
+        pianoKeysView.put(KeyCode.H, new KeyView(new PianoKey("F", KeyCode.H, 53)));
+        pianoKeysView.put(KeyCode.U, new KeyView(new PianoKey("F#", KeyCode.U, 54)));
+        pianoKeysView.put(KeyCode.J, new KeyView(new PianoKey("G", KeyCode.J, 55)));
+        pianoKeysView.put(KeyCode.I, new KeyView(new PianoKey("G#", KeyCode.I, 56)));
+        pianoKeysView.put(KeyCode.K, new KeyView(new PianoKey("A", KeyCode.K, 57)));
+        pianoKeysView.put(KeyCode.O, new KeyView(new PianoKey("A#", KeyCode.O, 58)));
+        pianoKeysView.put(KeyCode.L, new KeyView(new PianoKey("B", KeyCode.L, 59)));
     }
 
     @Override

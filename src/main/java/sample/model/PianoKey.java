@@ -13,11 +13,10 @@ public class PianoKey {
     private int number;
     private Color color;
 
-    public PianoKey(String name, KeyCode key, int number, Color color) {
+    public PianoKey(String name, KeyCode key, int number) {
         this.name = name;
         this.key = key;
         this.number = number;
-        this.color = color;
     }
 
     public void keyUsage(KeyView key) {
