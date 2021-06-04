@@ -4,7 +4,6 @@ import javafx.animation.FillTransition;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
-import sample.controller.Main;
 import sample.view.KeyView;
 
 public class PianoKey {
@@ -58,4 +57,8 @@ public class PianoKey {
         this.color = color;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }

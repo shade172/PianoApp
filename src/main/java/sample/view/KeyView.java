@@ -1,12 +1,15 @@
 package sample.view;
 
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import sample.model.PianoKey;
 
+
 public class KeyView extends StackPane {
+    private FlowPane root = new FlowPane(10, 10);
     private PianoKey keys;
     private Rectangle r = new Rectangle();
 
@@ -18,6 +21,7 @@ public class KeyView extends StackPane {
         r.setStroke(Color.BLACK);
         getChildren().addAll(r, new Text(keys.getName()));
     }
+
 
     public PianoKey getKeys() {
         return keys;
