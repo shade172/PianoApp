@@ -25,7 +25,7 @@ class PianoKeyTest {
         expected.add(KeyCode.D.getCode());
         expected.add(actual.get(1));
         expected.add(KeyCode.R.getCode());
-        expected.add(actual.get(1));
+        expected.add(actual.get(3));
 
         assertEquals(expected, actual);
 
